@@ -1,16 +1,24 @@
 package stepdefinition;
 
+import org.junit.Assert;
+
+import com.pages.LoginPage;
+import com.qa.factory.DriverFactory;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginPageSteps {
+	private LoginPage loginpage=new LoginPage(DriverFactory.getDriver());
 	
+
 	
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		
+		
+	   
 	}
 
 	@When("user gets the title of the page")
@@ -20,10 +28,13 @@ public class LoginPageSteps {
 	}
 
 	@Then("page title should be {string}")
-	public void page_title_should_be(String string) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void page_title_should_be(String ExpectedTitlestring) {
+		String title=loginpage.getLoginPageTitle();
+		System.out.println("page title is: "+title);
+		Assert.assertTrue(title, false);
+		
 	}
+	    
 
 	@Then("forgot your password link should be displayed")
 	public void forgot_your_password_link_should_be_displayed() {

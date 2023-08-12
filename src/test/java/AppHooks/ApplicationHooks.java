@@ -2,6 +2,7 @@ package AppHooks;
 
 import java.util.Properties;
 
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.gherkin.model.Scenario;
@@ -37,7 +38,13 @@ public class ApplicationHooks {
 	public void tearDown(Scenario scenario) {
 		if(scenario.isFailed()) {
 			//take a screen shot
-		String screenshotName=scenario.getGherkinName().replaceAll(" ","_");
+		String screenshotName=scenario.getName().replaceAll(" ","_");
+		byte [] sourcePath=((TakeScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+		scenario.attach(sourcePath, "image/png", screenshotName);
+		
+		//44 minutes is done
+		//https://www.youtube.com/watch?v=NhiIAZRoc0g&t=467s
+		
 			
 		}
 		

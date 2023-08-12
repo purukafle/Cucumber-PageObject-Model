@@ -23,8 +23,20 @@ public class LoginPage {
 		return driver.getTitle();
 		
 	}
-	public void isForgotPWdLinkExist() {
-		driver.findElement(forgotPaswordLInks);
+	public boolean isForgotPWdLinkExist() {
+		return driver.findElement(forgotPaswordLInks).isDisplayed();
+		 
+	}
+	public void enterUserName(String username) {
+		driver.findElement(emailId).sendKeys(username);
+		
+	}
+	public void enterUserPassword(String pwd) {
+		driver.findElement(password).sendKeys(pwd);
+		
+	}
+	public void clickOnLogin() {
+		driver.findElement(signInButton).click();
 	}
 	
 	
