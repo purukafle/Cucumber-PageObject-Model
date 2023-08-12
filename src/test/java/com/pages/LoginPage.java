@@ -39,6 +39,7 @@ public class LoginPage {
 		driver.findElement(signInButton).click();
 	}
 	
-	
+	//1 hrs done
+	//https://www.youtube.com/watch?v=NhiIAZRoc0g&t=467s
 
 }
