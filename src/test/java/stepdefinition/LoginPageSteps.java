@@ -3,15 +3,14 @@ package stepdefinition;
 import org.junit.Assert;
 
 import com.pages.LoginPage;
-import com.qa.factory.DriverFactory;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LoginPageSteps {
-	private LoginPage loginpage=new LoginPage(DriverFactory.getDriver());
-	
+	private LoginPage loginpage;
+
 
 	
 	@Given("user is on login page")
